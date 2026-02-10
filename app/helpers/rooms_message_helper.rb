@@ -1,0 +1,2 @@
+module RoomsMessageHelper
+end

@@ -1,0 +1,14 @@
+<h1>Chat Rooms</h1>
+
+
+<% @rooms.each do |room| %>
+
+  <p>
+    <%= link_to room.name, room_path(room) %>
+  </p>
+
+<% end %>
+
+<hr>
+
+<%= link_to "Create Room", new_room_path %>
