@@ -9,9 +9,9 @@ class RoomMessagesController < ApplicationController
     @room_message.user = current_user
 
     if @room_message.save
-      redirect_to room_path(@room)
+      redirect_to room_path(@room), status: :see_other
     else
-      render :show, status: :unprocessable_entity
+      redirect_to room_path(@room), alert: "Failed to send message", status: :see_other
     end
   end
 
