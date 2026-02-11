@@ -3,6 +3,8 @@ class RoomMessage < ApplicationRecord
   belongs_to :user
 
   validates :content, presence: true
+  validates :user, presence: true
+  validates :room, presence: true
 
   after_create_commit :broadcast_message
 

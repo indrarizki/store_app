@@ -3,15 +3,16 @@ class RoomMessagesController < ApplicationController
   before_action :authenticate_user!
 
   def create
+    @room = Room.find(room_message_params[:room_id])
 
-    @room_message = current_user.room_messages.build(room_message_params)
+    @room_message = @room.room_messages.build(room_message_params)
+    @room_message.user = current_user
 
     if @room_message.save
-        redirect_to room_path(@room_message.room)
+      redirect_to room_path(@room)
     else
-      head :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
-
   end
 
   private
