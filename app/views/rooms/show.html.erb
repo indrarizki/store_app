@@ -1,13 +1,11 @@
 <div class="max-w-2xl mx-auto mt-10 border rounded-lg shadow-lg">
 
-  <!-- Header -->
   <div class="bg-blue-600 text-white p-4 rounded-t-lg">
     <h1 class="text-lg font-semibold">
       <%= @room.name %>
     </h1>
   </div>
 
-  <!-- Messages -->
   <div id="messages"
        class="h-96 overflow-y-auto p-4 space-y-2 bg-gray-50">
 
@@ -29,7 +27,6 @@
 
   </div>
 
-  <!-- Form -->
   <div class="border-t p-4">
 
     <%= form_with model: @room_message,
