@@ -13,5 +13,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV["DATABASE_URL"] || "postgresql://localhost/dummy" %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
