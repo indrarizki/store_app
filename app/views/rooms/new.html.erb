@@ -1,7 +1,6 @@
 <h1>Create Room</h1>
 
 <%= form_with model: @room do |f| %>
-
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -10,7 +9,4 @@
   <div>
     <%= f.submit "Create Room" %>
   </div>
-
 <% end %>
-
-<%= link_to "Back", root_path %>
