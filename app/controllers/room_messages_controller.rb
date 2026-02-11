@@ -14,7 +14,7 @@ class RoomMessagesController < ApplicationController
       redirect_to room_path(@room), alert: "Failed to send message", status: :see_other
     end
   end
-
+ 
   private
 
   def room_message_params
